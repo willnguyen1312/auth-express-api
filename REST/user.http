@@ -1,0 +1,30 @@
+### INDEX ROUTE
+GET http://localhost:8080/ HTTP/1.1
+
+### SETUP
+GET http://localhost:8080/setup HTTP/1.1
+
+### INDEX API ROUTE
+GET http://localhost:8080/api HTTP/1.1
+
+### GET ALL USERS by set token to request's header
+GET http://localhost:8080/api/users HTTP/1.1
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTA4MzgwODE3fQ.hFc-vuL8HY3aIQlpv0eFnIhYA_kUZxJA315uj4e1UQ4
+
+### GET ALL USERS by set token to request's url
+GET http://localhost:8080/api/users?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTA4MzgwODE3fQ.hFc-vuL8HY3aIQlpv0eFnIhYA_kUZxJA315uj4e1UQ4 HTTP/1.1
+
+### POST TO GET TOKEN
+POST http://localhost:8080/api/authenticate HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Nam Nguyen",
+    "password": "password"
+}
+
+# {
+#   "success": true,
+#   "message": "Enjoy your token!",
+#   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTA4MzgwODE3fQ.hFc-vuL8HY3aIQlpv0eFnIhYA_kUZxJA315uj4e1UQ4"
+# }
